@@ -183,15 +183,14 @@ git log --oneline
 ~~~
 git rebase -i 36d15de
 ~~~
-3. Automaticamente se abre el archivo rebase y se debe cambiar los pick por:             
+3. Automaticamente se abre el archivo rebase y se debe cambiar los pick por (tecla insert, al primer commit cambiar pick por REWORD y los demás por FIXUP):             
 ~~~
-reword 612f2f7 El nuevo mensaje del commit
-    pick d84b05d This commit should be squashed
-    pick ac60234 Yet another commit
-    pick 36d15de Rebase from here
-    :q
-    El nuevo mensaje del commit
-    Otro mensaje para indicar que agrupa
+    reword 612f2f7 El nuevo mensaje del commit
+    fixup d84b05d This commit should be squashed
+    fixup ac60234 Yet another commit
+    fixup 36d15de Rebase from here
+    :wq
+    El nuevo mensaje del commit    
     :wq
 ~~~
 # Borrar ramas locales
