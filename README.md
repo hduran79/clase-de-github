@@ -7,7 +7,7 @@
 3. Repositorio [GitHub](https://github.com/)
 ~~~
 user: hugoivandr@gmail.com
-pass: Hduran1979
+pass: XXXXXX
 ~~~
 ## Estrategias de Ramas
 * https://jesuslc.com/2015/12/30/estrategias-de-branching-no-solo-existe-git-flow/
