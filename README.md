@@ -241,4 +241,7 @@ git restore <archivo>
 # .gitignore
 Se debe crear un archivo .gitignore y agregar los archivos que no queremos que se suban al repositorio.
 
+## Solucionar error name file long, execute with admin
+git config --system core.longpaths true
+
 
