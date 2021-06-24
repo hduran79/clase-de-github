@@ -199,6 +199,14 @@ git branch -a -> Lista las ramas locales y remotas
 git branch -d <rama> -> Borrar una rama local
 git push origin :nombre-rama -> Borrar una rama remota
 ~~~
+
+# Recuperar una rama borrada
+[Ejemplo](https://platzi.com/clases/1557-git-github/19988-git-reset-y-reflog-usese-en-caso-de-emergencia/)
+~~~
+git reflog
+git reset --hard <hash> (Recupera todo y borra todo justo antes del commit)
+~~~
+
 # Git Graph
 ~~~
 gitk --all
