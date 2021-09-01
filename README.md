@@ -8,7 +8,7 @@
 
 ```
 user: hugoivandr@gmail.com
-pass: XXXXXX
+pass: hugo.duran79**
 ```
 
 ## Estrategias de Ramas
@@ -243,6 +243,15 @@ git branch -d <rama> -> Borrar una rama local
 git push origin :nombre-rama -> Borrar una rama remota
 ```
 
+# Recuperar una rama borrada
+
+[Ejemplo](https://platzi.com/clases/1557-git-github/19988-git-reset-y-reflog-usese-en-caso-de-emergencia/)
+
+```
+git reflog (Recupera todos los movimientos del proyecto.)
+git reset --hard <hash> (Recupera todo y borra todo justo antes del commit)
+```
+
 # Git Graph
 
 ```
@@ -301,3 +310,11 @@ Se debe crear un archivo .gitignore y agregar los archivos que no queremos que s
 ## Solucionar error name file long, execute with admin
 
 git config --system core.longpaths true
+
+# Plantillas para gitignore
+
+https://github.com/github/gitignore
+
+# Git Hooks
+
+https://githooks.com/
