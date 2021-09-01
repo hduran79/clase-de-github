@@ -90,6 +90,10 @@ git push -u origin main
 ## Zona Commit
 
     git revert HEAD (Elimina un commit completo y devuelve los cambios)
+
+    git revert dc7f54d63a46d3310c3d681f17c0943fab9243bf 1edf0c8e53812370ec43e114437cf8cbb9d60b56
+    git push -f origin master
+
     git reset --soft HEAD~1 (Elimina todo el commit y coloca los archivos en la zona del Staging Area)
     git reset --soft HEAD~1 <archivo> (Elimina un archivo del commit y lo coloca en la zona del Staging Area)
 
