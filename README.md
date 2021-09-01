@@ -305,3 +305,7 @@ git config --system core.longpaths true
 # Plantillas para gitignore
 
 https://github.com/github/gitignore
+
+# Git Hooks
+
+https://githooks.com/
