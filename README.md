@@ -301,3 +301,7 @@ Se debe crear un archivo .gitignore y agregar los archivos que no queremos que s
 ## Solucionar error name file long, execute with admin
 
 git config --system core.longpaths true
+
+# Plantillas para gitignore
+
+https://github.com/github/gitignore
