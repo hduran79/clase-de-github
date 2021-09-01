@@ -243,7 +243,6 @@ git branch -d <rama> -> Borrar una rama local
 git push origin :nombre-rama -> Borrar una rama remota
 ```
 
-````
 # Git Graph
 
 ```
@@ -310,4 +309,3 @@ https://github.com/github/gitignore
 # Git Hooks
 
 https://githooks.com/
-````
