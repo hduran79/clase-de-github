@@ -251,13 +251,22 @@ git branch -d <rama> -> Borrar una rama local
 git push origin :nombre-rama -> Borrar una rama remota
 ```
 
-# Recuperar una rama borrada
+# Reestablecer al commit requerido
+
+Es importante cuando queremos dejar una rama en su estado original
 
 [Ejemplo](https://platzi.com/clases/1557-git-github/19988-git-reset-y-reflog-usese-en-caso-de-emergencia/)
 
 ```
 git reflog (Recupera todos los movimientos del proyecto.)
 git reset --hard <hash> (Recupera todo y borra todo justo antes del commit, borra la historia)
+```
+
+# Recuperar una rama borrada
+
+```
+git reflog (Recupera todos los movimientos del proyecto.)
+git checkout -b <nameBranch> <hash>
 ```
 
 # Git Graph
@@ -339,5 +348,3 @@ git commit -m "mensaje" -> Subir los cambios repositorio
 ```
 git commit --amend -> Los cambios que hice los va a pegar al commit anterior, no hace un nuevo commit, pero si se puede cambiar el mensaje del mismo
 ```
-
-practicando comando stash
