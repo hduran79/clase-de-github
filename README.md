@@ -1,4 +1,4 @@
-# Manual Git
+# Manual Git 👻
 
 1. Descargar e instalar [Git](https://git-scm.com/download/win)
 
@@ -348,3 +348,8 @@ git commit -m "mensaje" -> Subir los cambios repositorio
 ```
 git commit --amend -> Los cambios que hice los va a pegar al commit anterior, no hace un nuevo commit, pero si se puede cambiar el mensaje del mismo
 ```
+
+# Utilidades
+
+[Pages Github](https://pages.github.com/)
+[Editor MarkDown](https://pandao.github.io/editor.md/en.html)
