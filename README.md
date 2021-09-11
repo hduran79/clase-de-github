@@ -8,7 +8,7 @@
 
 ```
 user: hugoivandr@gmail.com
-pass: hugo.duran79**
+pass: XXXXX
 ```
 
 ## Estrategias de Ramas
