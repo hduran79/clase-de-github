@@ -329,8 +329,13 @@ https://githooks.com/
 
 # COMMIT
 
+```
 git add . -> agregar archivos al Staging Area
 git commit -m "mensaje" -> Subir los cambios repositorio
+```
 
-1. Remendar commits
-   git commit --amend -> Los cambios que hice los va a pegar al commit anterior, no hace un nuevo commit, pero si se puede cambiar el mensaje del mismo
+## Remendar commits
+
+```
+git commit --amend -> Los cambios que hice los va a pegar al commit anterior, no hace un nuevo commit, pero si se puede cambiar el mensaje del mismo
+```
