@@ -339,3 +339,5 @@ git commit -m "mensaje" -> Subir los cambios repositorio
 ```
 git commit --amend -> Los cambios que hice los va a pegar al commit anterior, no hace un nuevo commit, pero si se puede cambiar el mensaje del mismo
 ```
+
+practicando comando stash
