@@ -138,6 +138,10 @@ Almacenar los cambios en una zona virtual y funciona como una pila.
     git stash pop <stash{0}> -> para recuperar el commit y lo borra del stash
     git stash apply <stash{0}> -> para recuperar el commit pero no lo borra del stash
 
+    Crear una rama a partir de un stash
+    1. git stash
+    2. git stash branch <nameBranch> -> Crea una rama con lo que hay en el stash
+
 # Bisect
 
 Es una forma eficiente de buscar en grupos grandes de datos (ordenados), es muy útil para buscar un trozo de código o un cambio no deseado en un commit. ver [tutorial](https://apiumhub.com/es/tech-blog-barcelona/git-bisect/#:~:text=Bisect%20es%20un%20algoritmo%20de,y%20adem%C3%A1s%20no%20es%20invasivo)
@@ -253,7 +257,7 @@ git push origin :nombre-rama -> Borrar una rama remota
 
 ```
 git reflog (Recupera todos los movimientos del proyecto.)
-git reset --hard <hash> (Recupera todo y borra todo justo antes del commit)
+git reset --hard <hash> (Recupera todo y borra todo justo antes del commit, borra la historia)
 ```
 
 # Git Graph
