@@ -73,7 +73,7 @@ git push -u origin main
 
 ## Verificar si git esta instalado o su versión
 
-```
+``` sh
     git --version
     git status
 ```
@@ -94,20 +94,38 @@ git push -u origin main
 
 ## Zona Commit
 
-    git revert HEAD (Elimina un commit completo y devuelve los cambios)
+RESET
+Git reset se utiliza para mover el proyecto a un commit anterior eliminando todos los posteriores de el historial de commits.
+### Puede utilizarse reset cuando:
 
-    git revert 3291691874ccea8fb06508fe8c2f58bdb9c272a4
-    git push -f origin master
+* Se han hecho commits equivocados no publicados y se desea deshacer los cambios: En el caso de no querer mantener ningunos de los cambios locales realizados puede utilizarse –hard, en caso contrario, si se quieren mantener esos cambios para realizar un commit con ellos más adelante puede utilizarse –soft.
+* Se han publicado commits cuya información se desea eliminar del historial permanentemente..
 
-    git reset --soft HEAD~1 (Elimina todo el commit y coloca los archivos en la zona del Staging Area)
-    git reset --soft HEAD~1 <archivo> (Elimina un archivo del commit y lo coloca en la zona del Staging Area)
+### NO debe utilizarse reset cuando:
 
-    git reset --mixed HEAD~1 (Elimina todo el commit y coloca los archivos en la zona Working directory)
-    git reset --mixed HEAD~1 <archivo> (Elimina un archivo del commit y lo coloca en la zona Working directory)
+* Se quiere regresar el proyecto al estado de un estado anterior pero se quiere mantener registros de esos cambios. En este caso debe utilizarse reverse.
+* Se está trabajando en proyecto entre más de una persona y no existen un consenso grupal sobre el revertido permanente.
 
-    No recomendado
-    git reset --hard HEAD~1 (Elimina todo el commit, quita los archivos de la zona de preparación y Staging Area, dejando los archivos origianles es decir borra los cambios)
-    git reset --hard HEAD~1 <archivo> (Elimina un archivo del commit, y lo deja en a zona de preparación dejando el archivo original es decir borra los cambios)
+``` sh
+git reset --soft HEAD~1 (Elimina todo el commit y coloca los archivos en la zona del Staging Area)
+git reset --soft HEAD~1 <archivo> (Elimina un archivo del commit y lo coloca en la zona del Staging Area)
+
+git reset --mixed HEAD~1 (Elimina todo el commit y coloca los archivos en la zona Working directory)
+git reset --mixed HEAD~1 <archivo> (Elimina un archivo del commit y lo coloca en la zona Working directory)
+
+No recomendado
+Elimina todo el commit, quita los archivos de la zona de preparación y Staging Area, dejando los archivos originales es decir borra los cambios
+git reset --hard HEAD~1 
+git reset --hard HEAD~1 <archivo> 
+```
+
+REVERT
+Git reverse revierte el proyecto al estado de un commit generando un nuevo commit que revierte los cambios realizados. De esta manera las modificaciones no son eliminadas del historial y pueden ser accedidas en el futuro. Los cambios locales que no han sido guardados son sobrescritos.
+``` sh
+git revert HEAD (Elimina un commit completo y devuelve los cambios)
+git revert 3291691874ccea8fb06508fe8c2f58bdb9c272a4
+git push -f origin master
+```
 
 ## Ver las diferencias entre los archivos
 
@@ -349,11 +367,45 @@ git commit -m "mensaje" -> Subir los cambios repositorio
 ```
 
 ## Remendar commits
+Suponemos que acabamos de hacer un commit en el repositorio pero nos hemos olvidado de añadir un archivo que queremos incluir en ese commit. En estos casos podemos utilizar el comando git commit --amend para añadir nuevos archivos al último commit realizado sobre el repositorio.
 
-```
-git commit --amend -> Los cambios que hice los va a pegar al commit anterior, no hace un nuevo commit, pero si se puede cambiar el mensaje del mismo
+A continuación se muestra una posible secuencia de comandos simulando la situación que acabamos de describir.
+
+``` sh
+git add archivo.txt
+git commit -m "Añadimos el archivo.txt"
+git add archivo_olvidado.txt
+git commit --amend
 ```
 
+# Deshacer cambios en el workspace
+Para deshacer los cambios realizados en archivo.txt y volver a su estado anterior sería necesario ejecutar:
+
+``` sh
+git ckeckout -- archivo.txt
+```
+# Borrando y moviendo/renombrando archivos
+
+1. Queremos eliminar un archivo que todavía no ha sido incluido en el repositorio y se encuentra en la sección Workspace con el estado Untracked. 
+   En este caso no es necesario utilizar ningún comando específico de git, lo borraríamos con el comando rm.
+``` sh
+rm archivo.txt
+```
+
+2. Queremos eliminar un archivo que ya está incluido en el repositorio y se encuentra en la sección Workspace con el estado Modified.
+3. Queremos eliminar un archivo que ya está incluido en el repositorio y se encuentra en la sección Staging Area con el estado Staged.
+4. Queremos eliminar un archivo que ya está incluido en el repositorio y se encuentra en la sección Local Repository con el estado Commited.
+``` sh
+git rm archivo.txt
+git commit -m "Se elimina archivo.txt"
+```
+
+# Mover/Renombrar archivos
+Para mover a otro directorio o renombrar un archivo que ya se encuentra bajo el control de versiones de git es necesario utilizar el siguiente comando:
+``` sh
+git mv archivo.txt nuevo_nombre.txt
+git commit -m "Se renombra archivo.txt por nuevo_nombre.txt"
+```
 # Utilidades
 
 [Pages Github](https://pages.github.com/)
