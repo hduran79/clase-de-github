@@ -306,8 +306,8 @@ git log --oneline --graph --color --all --decorate
 ```
     git reset head .
     git reset head <archivo>
-    git restore --stage .
-    git restore --stage <archivo>
+    git restore --staged .
+    git restore --staged <archivo>
 ```
 
 # Subir archivos a la Zona Staging Area
