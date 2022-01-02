@@ -107,16 +107,18 @@ Git reset se utiliza para mover el proyecto a un commit anterior eliminando todo
 * Se está trabajando en proyecto entre más de una persona y no existen un consenso grupal sobre el revertido permanente.
 
 ``` sh
-git reset --soft HEAD~1 (Elimina todo el commit y coloca los archivos en la zona del Staging Area)
-git reset --soft HEAD~1 <archivo> (Elimina un archivo del commit y lo coloca en la zona del Staging Area)
+git reset HEAD~1 (Elimina todo el commit y coloca los archivos en la zona Working directory)
 
-git reset --mixed HEAD~1 (Elimina todo el commit y coloca los archivos en la zona Working directory)
-git reset --mixed HEAD~1 <archivo> (Elimina un archivo del commit y lo coloca en la zona Working directory)
+git reset --soft <commit> (Elimina todo el commit y coloca los archivos en la zona del Staging Area)
+git reset --soft <commit> <archivo> (Elimina un archivo del commit y lo coloca en la zona del Staging Area)
+
+git reset --mixed <commit> (Elimina todo el commit y coloca los archivos en la zona Working directory)
+git reset --mixed <commit> <archivo> (Elimina un archivo del commit y lo coloca en la zona Working directory)
 
 No recomendado
 Elimina todo el commit, quita los archivos de la zona de preparación y Staging Area, dejando los archivos originales es decir borra los cambios
-git reset --hard HEAD~1 
-git reset --hard HEAD~1 <archivo> 
+git reset --hard <commit> 
+git reset --hard <commit> <archivo> 
 ```
 
 REVERT
