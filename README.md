@@ -1,3 +1,8 @@
+# Que es GIT
+Git es un software de control de versiones distribuido. El control de versiones es una forma de guardar cambios a lo largo del tiempo sin sobrescribir versiones anteriores. Estar distribuido significa que cada desarrollador que trabaja con un repositorio de Git tiene una copia de ese repositorio completo: cada confirmación, cada rama, cada archivo. 
+
+* Git almacena los cambios en los hash (SHA), que funcionan comprimiendo archivos de texto. Eso hace que Git sea un muy buen sistema de control de versiones (VCS) para la programación de software, pero no tan bueno para archivos binarios como imágenes o videos.
+* Los repositorios de Git se pueden conectar, por lo que puede trabajar en uno localmente en su propia máquina y conectarlo a un repositorio compartido. De esta manera, puede enviar y tirar cambios a un repositorio y colaborar fácilmente con otros.
 # Manual Git 👻
 
 1. Descargar e instalar [Git](https://git-scm.com/download/win)
@@ -91,7 +96,7 @@ git push -u origin main
 
     git revert HEAD (Elimina un commit completo y devuelve los cambios)
 
-    git revert dc7f54d63a46d3310c3d681f17c0943fab9243bf
+    git revert 3291691874ccea8fb06508fe8c2f58bdb9c272a4
     git push -f origin master
 
     git reset --soft HEAD~1 (Elimina todo el commit y coloca los archivos en la zona del Staging Area)
@@ -353,3 +358,9 @@ git commit --amend -> Los cambios que hice los va a pegar al commit anterior, no
 
 [Pages Github](https://pages.github.com/)
 [Editor MarkDown](https://pandao.github.io/editor.md/en.html)
+
+# Desbloquear un archivo Git
+
+git lfs locks => list all locked files
+git lfs unlock {filename} => unlock file, fail if the file was locked
+git lfs unlock --id={locked_file_id} --force => force to unlock the file
