@@ -1,1 +1,3 @@
 Lorem ipsum sit ammet dolor set.
+
+Se han hecho commits equivocados no publicados y se desea deshacer los cambios: En el caso de no querer mantener ningunos de los cambios locales realizados puede utilizarse –hard, en caso contrario, si se quieren mantener esos cambios para realizar un commit con ellos más adelante puede utilizarse –soft.
