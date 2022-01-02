@@ -93,7 +93,7 @@ git push -u origin main
     git pull origin <rama>
 
 ## Zona Commit
-
+[documentación](https://juncotic.com/git-reset-y-git-reverse/)
 **RESET**
 Git reset se utiliza para mover el proyecto a un commit anterior eliminando todos los posteriores de el historial de commits.
 ### Puede utilizarse reset cuando:
