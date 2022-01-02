@@ -106,7 +106,7 @@ git push -u origin main
     git reset --mixed HEAD~1 <archivo> (Elimina un archivo del commit y lo coloca en la zona Working directory)
 
     No recomendado
-    git reset --hard HEAD~1 (Elimina todo el commit, quita los archivos de la zona de preparación y Staging Area, dejando los archivos origianles es decir borra los cambios)
+    git reset --hard HEAD~1 (Elimina todo el commit, quita los archivos de la zona de preparación y Staging Area, dejando los archivos originales es decir borra los cambios)
     git reset --hard HEAD~1 <archivo> (Elimina un archivo del commit, y lo deja en a zona de preparación dejando el archivo original es decir borra los cambios)
 
 ## Ver las diferencias entre los archivos
@@ -349,11 +349,45 @@ git commit -m "mensaje" -> Subir los cambios repositorio
 ```
 
 ## Remendar commits
+Suponemos que acabamos de hacer un commit en el repositorio pero nos hemos olvidado de añadir un archivo que queremos incluir en ese commit. En estos casos podemos utilizar el comando git commit --amend para añadir nuevos archivos al último commit realizado sobre el repositorio.
 
-```
-git commit --amend -> Los cambios que hice los va a pegar al commit anterior, no hace un nuevo commit, pero si se puede cambiar el mensaje del mismo
+A continuación se muestra una posible secuencia de comandos simulando la situación que acabamos de describir.
+
+``` sh
+git add archivo.txt
+git commit -m "Añadimos el archivo.txt"
+git add archivo_olvidado.txt
+git commit --amend
 ```
 
+# Deshacer cambios en el workspace
+Para deshacer los cambios realizados en archivo.txt y volver a su estado anterior sería necesario ejecutar:
+
+``` sh
+git ckeckout -- archivo.txt
+```
+# Borrando y moviendo/renombrando archivos
+
+1. Queremos eliminar un archivo que todavía no ha sido incluido en el repositorio y se encuentra en la sección Workspace con el estado Untracked. 
+   En este caso no es necesario utilizar ningún comando específico de git, lo borraríamos con el comando rm.
+``` sh
+rm archivo.txt
+```
+
+2. Queremos eliminar un archivo que ya está incluido en el repositorio y se encuentra en la sección Workspace con el estado Modified.
+3. Queremos eliminar un archivo que ya está incluido en el repositorio y se encuentra en la sección Staging Area con el estado Staged.
+4. Queremos eliminar un archivo que ya está incluido en el repositorio y se encuentra en la sección Local Repository con el estado Commited.
+``` sh
+git rm archivo.txt
+git commit -m "Se elimina archivo.txt"
+```
+
+# Mover/Renombrar archivos
+Para mover a otro directorio o renombrar un archivo que ya se encuentra bajo el control de versiones de git es necesario utilizar el siguiente comando:
+``` sh
+git mv archivo.txt nuevo_nombre.txt
+git commit -m "Se renombra archivo.txt por nuevo_nombre.txt"
+```
 # Utilidades
 
 [Pages Github](https://pages.github.com/)
