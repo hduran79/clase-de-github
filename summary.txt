@@ -4,4 +4,3 @@ Se han hecho commits equivocados no publicados y se desea deshacer los cambios: 
 commando reset --soft
 commando reverse
 El comando reset no quita los cambios..
-El comando revert pruebas.
