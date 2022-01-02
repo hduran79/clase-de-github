@@ -94,7 +94,7 @@ git push -u origin main
 
 ## Zona Commit
 
-RESET
+**RESET**
 Git reset se utiliza para mover el proyecto a un commit anterior eliminando todos los posteriores de el historial de commits.
 ### Puede utilizarse reset cuando:
 
@@ -121,7 +121,7 @@ git reset --hard <commit>
 git reset --hard <commit> <archivo> 
 ```
 
-REVERT
+**REVERT**
 Git reverse revierte el proyecto al estado de un commit generando un nuevo commit que revierte los cambios realizados. De esta manera las modificaciones no son eliminadas del historial y pueden ser accedidas en el futuro. Los cambios locales que no han sido guardados son sobrescritos.
 ``` sh
 git revert HEAD (Elimina un commit completo y devuelve los cambios)
