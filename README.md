@@ -416,5 +416,7 @@ git commit -m "Se renombra archivo.txt por nuevo_nombre.txt"
 # Desbloquear un archivo Git
 
 git lfs locks => list all locked files
-git lfs unlock {filename} => unlock file, fail if the file was locked
-git lfs unlock --id={locked_file_id} --force => force to unlock the file
+
+git lfs unlock JenkinsfileWeb => unlock file, fail if the file was locked
+
+git lfs unlock --id=17 --force => force to unlock the file
