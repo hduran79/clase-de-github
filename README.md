@@ -3,6 +3,21 @@ Git es un software de control de versiones distribuido. El control de versiones 
 
 * Git almacena los cambios en los hash (SHA), que funcionan comprimiendo archivos de texto. Eso hace que Git sea un muy buen sistema de control de versiones (VCS) para la programación de software, pero no tan bueno para archivos binarios como imágenes o videos.
 * Los repositorios de Git se pueden conectar, por lo que puede trabajar en uno localmente en su propia máquina y conectarlo a un repositorio compartido. De esta manera, puede enviar y tirar cambios a un repositorio y colaborar fácilmente con otros.
+
+# Herramientas
+- GitKraken para manejar git desde una interfaz gráfica
+- Cmder para hacerlo mediante consola. [Descargar](https://cmder.net/)
+
+# Explicación para simples mortales?
+Git en pocas palabras es un comparador de textos. Detecta cada linea de nuestro código para buscar diferencias con respecto a lo que ya tenemos publicado en nuestro repositorio. Es importante entender que estamos “rascando la superficie” dado que Git es muy potente y tiene muchas funcionalidades. Pero en el sentido más práctico, es eso. [Clic Aquí](https://maxiburgos.medium.com/qu%C3%A9-es-git-y-c%C3%B3mo-instalarlo-b6102f4dec8)
+# Git me sirve como back-up?
+Si y no. Nos permite almacenar nuestro proyecto en la nube a través de GitHub o Bitbucket entre otros, o mantenerlo local en nuestra PC. Pero la utilidad mas importante es el trabajo colaborativo entre desarrolladores. Al tener un repositorio, vamos a poder subir los cambios y mantener un control de versionado. Pero a la vez otros desarrolladores pueden bajar esos cambios y mantener el proyecto actualizado. Entonces cuando nuestro compañero implementa una funcionalidad nueva y actualice el repositorio, nosotros vamos a poder bajar dichos cambios y trabajar con la última versión.
+
+# Git, es pago?
+Git es Open Source (Código Abierto) y gratuito. No hace falta pagar una licencia ni nada por el estilo. Se puede descargar desde su página oficial [Descargar](https://git-scm.com/).
+
+# Puedo usar Git con cualquier lenguaje de programación o framework?
+Efectivamente, pero es importante tener en cuenta que cada proyecto dependiendo de su tecnología va a tener una configuración determinada. Esto implica que existen ciertos archivos locales que se deben ignorar y no ser commiteados, como en el caso de la carpeta node_modules en proyectos de NodeJS. 
 # Manual Git 👻
 
 1. Descargar e instalar [Git](https://git-scm.com/download/win)
@@ -303,7 +318,7 @@ git log --oneline --graph --color --all --decorate
 
 # Quitar archivos de la Zona Staging Area
 
-```
+``` sh
     git reset head .
     git reset head <archivo>
     git restore --staged .
@@ -414,9 +429,8 @@ git commit -m "Se renombra archivo.txt por nuevo_nombre.txt"
 [Editor MarkDown](https://pandao.github.io/editor.md/en.html)
 
 # Desbloquear un archivo Git
-
+``` sh
 git lfs locks => list all locked files
-
 git lfs unlock JenkinsfileWeb => unlock file, fail if the file was locked
-
 git lfs unlock --id=17 --force => force to unlock the file
+```
