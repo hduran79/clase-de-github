@@ -5,7 +5,7 @@ Git es un software de control de versiones distribuido. El control de versiones 
 * Los repositorios de Git se pueden conectar, por lo que puede trabajar en uno localmente en su propia máquina y conectarlo a un repositorio compartido. De esta manera, puede enviar y tirar cambios a un repositorio y colaborar fácilmente con otros.
 
 # Herramientas
-- GitKraken para manejar git desde una interfaz gráfica
+- GitKraken para manejar git desde una interfaz gráfica [Descargar](https://www.gitkraken.com/)
 - Cmder para hacerlo mediante consola. [Descargar](https://cmder.net/)
 
 # Explicación para simples mortales?
@@ -38,12 +38,12 @@ pass: XXXXX
 
 ## Tutoriales
 
-- https://www.youtube.com/watch?v=HiXLkL42tMU -> Basico
+- https://www.youtube.com/watch?v=HiXLkL42tMU -> Básico
 - https://www.youtube.com/watch?v=ZA23SFendmg -> Avanzado
 
 ## Configurar las variables globales de GIT
 
-    git config --global --list -> Para verificar la configuracion global
+    git config --global --list -> Para verificar la configuración global
     git config --global user.name "hduran"
     git config --global user.email hduran@votresas.com
 
@@ -173,6 +173,7 @@ git push -f origin master
 
 Almacenar los cambios en una zona virtual y funciona como una pila.
 
+    1. Agregar los cambios en el Staging Area y después ejecutar los comandos del stash
     git stash -> Para guardar los cambios en la zona virtual.
     git stash list -> Listado de todos los elementos del stash
     git stash pop <stash{0}> -> para recuperar el commit y lo borra del stash
@@ -343,8 +344,8 @@ rm <archivo>
 ## Descartar cambios
 
 ```
-git checkout -- index.html
-git restore <archivo>
+git checkout -- index.html (quita el archivo de steagen area y lo pasa al working directory)
+git restore <archivo> (Elimina los cambios del archivo que esta en el working directory)
 ```
 
 # Borrar Tag
