@@ -159,7 +159,7 @@ https://mydominio/rest/v3/products
 
 ## Consejo # 7 - Usa JSON, pero úsalo bien
 
-```json
+```java
 bad -> esto no es formato json.
 ya quedo bien
 
