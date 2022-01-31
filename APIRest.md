@@ -14,7 +14,7 @@ La principal ventaja de esta arquitectura es que ha aportado a la web una mayor 
 
 # SEGURIDAD EN SERVICIOS REST
 
-  1.  **Utilizar HTTPS** => La información viaja de manera mas segura porque va cifrada (let's encrypt permite obtener certificados de manera gratis)
+1.  **Utilizar HTTPS** => La información viaja de manera mas segura porque va cifrada (let's encrypt permite obtener certificados de manera gratis)
 
 2.  **Poner autenticación y autorización en los endpoints** => **_Autenticación_** El usuario se debe de identificar de alguna forma y enviar un token de sesión sino no puede acceder al endpoint y **_autorización_** Verificar si el usuario tiene permiso para ejecutar el endpoint.
 
@@ -24,9 +24,13 @@ La principal ventaja de esta arquitectura es que ha aportado a la web una mayor 
 
 **Nota**: Existe una plataforma **_OAth0_** que nos permite añadir elementos de seguridad como iniciar session a un sistema y este se encarga de la generación del JWT.
 
-5.  **No poner información sensible en la URL** => Es un problema porque hay servidores que guardan información de las URLs en sus logs. **_Recomendación_** enviar información sensible por los **headers**, por ejemplo los tokens de session.
+JWT es un estándar de código abierto basado en JSON para crear tokens de acceso que nos permiten securizar las comunicaciones entre cliente y servidor
 
-6.  **Validar los parámetros de entrada** => Esto evita la inyección de código.
+4.  **No poner información sensible en la URL** => Es un problema porque hay servidores que guardan información de las URLs en sus logs.
+
+**_Recomendación_** enviar información sensible por los **headers**, por ejemplo los tokens de session.
+
+5.  **Validar los parámetros de entrada** => Esto evita la inyección de código.
 
 
 # DISEÑAR BIEN API REST
