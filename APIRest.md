@@ -17,14 +17,17 @@ La principal ventaja de esta arquitectura es que ha aportado a la web una mayor 
 1.  **Utilizar HTTPS** => La información viaja de manera mas segura porque va cifrada (let's encrypt permite obtener certificados de manera gratis)
 
 2.  **Poner autenticación y autorización en los endpoints** => **_Autenticación_** El usuario se debe de identificar de alguna forma y enviar un token de sesión sino no puede acceder al endpoint y **_autorización_** Verificar si el usuario tiene permiso para ejecutar el endpoint.
+    
     **Nota**: No basta con solo tener una autenticación.
 
 3.  **Utilizar Json Web Tokens (JWT)** => Cuando el usuario se autentique en la APP se debe generar un JWT es uan practica que funciona muy bien y son seguros, una alternativa es utilizar **_API Keys_** la desventaja es que estas API Keys son estáticas a no ser que se cambie manualmente, a diferencia de JWT tienen un tiempo de vida.
+    
     **Nota**: Existe una plataforma **_OAth0_** que nos permite añadir elementos de seguridad como iniciar session a un sistema y este se encarga de la generación del JWT.
 
     JWT es un estándar de código abierto basado en JSON para crear tokens de acceso que nos permiten securizar las comunicaciones entre cliente y servidor
 
 4.  **No poner información sensible en la URL** => Es un problema porque hay servidores que guardan información de las URLs en sus logs.
+    
     **_Recomendación_** enviar información sensible por los **headers**, por ejemplo los tokens de session.
 
 5.  **Validar los parámetros de entrada** => Esto evita la inyección de código.
