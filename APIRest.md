@@ -1,3 +1,7 @@
+# Guias para construir APIs REST
+[Richardson Maturity](https://restfulapi.net/http-status-codes/)
+[Martin fowler](https://martinfowler.com/articles/richardsonMaturityModel.html)
+[Microsoft / ApiGuide](https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md)
 # ¿Qué es la arquitectura REST?
 REST es una arquitectura de desarrollo web que puede ser utilizada en cualquier cliente HTTP. Además, es mucho más simple que otras arquitecturas ya existentes, como pueden ser XML-RPC o SOAP. Esta simplicidad se consigue porque emplea una interfaz web que usa hipermedios para la representación y transición de la información.
 
@@ -49,8 +53,15 @@ Deben mantener una jerarquía lógica. La jerarquía es el criterio por el que s
 
 Los filtrados de información de un recurso no se hacen en la URI.
 
-* POST: crear un recurso nuevo.
-* PUT: modificar un recurso existente.
+* POST: crear un recurso nuevo. (/device-management/devices) httpcode por defecto 201
+  - NO es idempotente . Entonces, si reintentamos la solicitud N veces, terminaremos teniendo N recursos con N URI diferentes creados en el servidor.
+  - Utilícelo POSTcuando desee agregar un recurso secundario en la colección de recursos .
+  - Las respuestas a este método no se pueden almacenar en caché, a menos que la respuesta incluya los campos de encabezado Cache-Control.
+* PUT: modificar un recurso existente. (/device-management/devices/{id})
+  - Hace referencia a un recurso ya existente, se realizará una operación de actualización;
+  - PUT El método es idempotente . Entonces, si reintentamos una solicitud varias veces, eso debería ser equivalente a una única invocación de solicitud.
+  - PUT reemplaza el recurso en su totalidad. Use PATCH si la solicitud actualiza parte del recurso.
+  - PUT es idempotente, no deberíamos almacenar en caché su respuesta .
 * GET: consultar información de un recurso.
 * DELETE: eliminar un recurso determinado.
 * PATCH: modificar solamente un atributo de un recurso.
@@ -118,7 +129,7 @@ Content-Type: application/json
 ```
 > Nota: En el cuerpo de la respuesta nos envía un json indicando que hubo un error pero el httpCode llega un 200, las API-Rest están diseñadas para tener significado a partir de los métodos y códigos de respuesta, el deber ser es que llega el código http de lo que realmente esta pasando.
 
-> Solución: Utilizar códigos  HTTP para dar significado a las respuestas
+> Solución: Utilizar códigos  HTTP para dar significado a las respuestas [ver](https://http.cat/)
 - 200 OK. Respuesta estándar para peticiones correctas.
 - 201 -> Created. La petición ha sido completada.
 - 202 -> Accepted. En procesamiento (asíncronos), pero no ha sido completado, se pueden hacer otros llamados para verificar si el proceso ya termino.
@@ -219,4 +230,18 @@ good -> formato json correcto.
 * Debemos tener presente, que los navegadores antiguos no soportan CORS.
 * Esta nueva especificación, añade funcionalidades nuevas a las peticiones AJAX como las peticiones entre dominios (cross-site), eventos de progreso y envio de datos binarios.
 * CORS requiere configuraciones en el servidor o a nivel de desarrollo.
+
+
+```mermaid
+sequenceDiagram
+    participant dotcom
+    participant iframe
+    participant viewscreen
+    dotcom->>iframe: loads html w/ iframe url
+    iframe->>viewscreen: request template
+    viewscreen->>iframe: html & javascript
+    iframe->>dotcom: iframe ready
+    dotcom->>iframe: set mermaid data on iframe
+    iframe->>iframe: render mermaid
+```
 
