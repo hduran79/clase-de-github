@@ -1,6 +1,8 @@
 # Guias para construir APIs REST
 [Richardson Maturity](https://restfulapi.net/http-status-codes/)
+
 [Martin fowler](https://martinfowler.com/articles/richardsonMaturityModel.html)
+
 [Microsoft / ApiGuide](https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md)
 # ¿Qué es la arquitectura REST?
 REST es una arquitectura de desarrollo web que puede ser utilizada en cualquier cliente HTTP. Además, es mucho más simple que otras arquitecturas ya existentes, como pueden ser XML-RPC o SOAP. Esta simplicidad se consigue porque emplea una interfaz web que usa hipermedios para la representación y transición de la información.
