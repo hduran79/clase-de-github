@@ -116,7 +116,7 @@ Git reset se utiliza para mover el proyecto a un commit anterior eliminando todo
 * Se han hecho commits equivocados no publicados y se desea deshacer los cambios: En el caso de no querer mantener ningunos de los cambios locales realizados puede utilizarse –hard, en caso contrario, si se quieren mantener esos cambios para realizar un commit con ellos más adelante puede utilizarse –soft.
 * Se han publicado commits cuya información se desea eliminar del historial permanentemente..
 
-### NO debe utilizarse reset cuando:
+### DESHACER EL ÚLTIMO COMMIT - NO debe utilizarse reset cuando:
 
 * Se quiere regresar el proyecto al estado de un estado anterior pero se quiere mantener registros de esos cambios. En este caso debe utilizarse reverse.
 * Se está trabajando en proyecto entre más de una persona y no existen un consenso grupal sobre el revertido permanente.
@@ -384,16 +384,18 @@ git add . -> agregar archivos al Staging Area
 git commit -m "mensaje" -> Subir los cambios repositorio
 ```
 
-## Remendar commits
+## MODIFICAR EL MENSAJE DEL ÚLTIMO COMMIT
 Suponemos que acabamos de hacer un commit en el repositorio pero nos hemos olvidado de añadir un archivo que queremos incluir en ese commit. En estos casos podemos utilizar el comando git commit --amend para añadir nuevos archivos al último commit realizado sobre el repositorio.
 
 A continuación se muestra una posible secuencia de comandos simulando la situación que acabamos de describir.
+
+Pero justo después de hacer el commit nos damos cuenta de que el mensaje no es totalmente correcto y queremos modificarlo. Para corregirlo, usaremos la opción --amend, de la siguiente manera:
 
 ``` sh
 git add archivo.txt
 git commit -m "Añadimos el archivo.txt"
 git add archivo_olvidado.txt
-git commit --amend
+git commit -m "nuevo mensaje del commit" --amend
 ```
 
 # Deshacer cambios en el workspace
@@ -434,4 +436,42 @@ git commit -m "Se renombra archivo.txt por nuevo_nombre.txt"
 git lfs locks => list all locked files
 git lfs unlock JenkinsfileWeb => unlock file, fail if the file was locked
 git lfs unlock --id=17 --force => force to unlock the file
+```
+
+# Git Remote 
+
+Verificar el repositorio al cual esta link el proyecto
+``` sh
+$ git remote -v
+
+origin  https://github.com/platzi/nestjs-modular.git (fetch)
+origin  https://github.com/platzi/nestjs-modular.git (push)
+
+link al proyecto nuevo
+git remote set-url origin https://gitlab-dso.serviciosit.co/votre/self-registration/votre.selfregistration.selfregistrationcountryassembly.git
+```
+
+link al proyecto nuevo
+``` sh
+git remote set-url origin https://gitlab-dso.serviciosit.co/votre/self-registration/votre.selfregistration.selfregistrationcountryassembly.git
+
+o 
+
+git remote set-url origin $(git remote -v | awk 'NR==1{print $2}' | awk '{gsub("git-dso.leonisa.com", "gitlab-dso.serviciosit.co");}1')
+```
+
+Remover el repositorio al cual esta link el proyecto.
+``` sh
+$ git remote rm origin
+
+git remote add origin https://github.com/platzi/nestjs-typeorm-datos.git
+git remote rm origin
+
+git remote add origin https://github.com/hduran79/nestjs-typeorm-datos.git
+git remote rm origin
+```
+
+git info remote
+``` sh
+ git remote show origin
 ```
