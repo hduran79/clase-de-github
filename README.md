@@ -316,6 +316,7 @@ git checkout -b <nameBranch> <hash>
 ```
 gitk --all
 git log --oneline --graph --color --all --decorate
+tig
 ```
 
 # Quitar archivos de la Zona Staging Area
