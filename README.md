@@ -290,6 +290,7 @@ git rebase -i 36d15de
 git branch -a -> Lista las ramas locales y remotas
 git branch -d <rama> -> Borrar una rama local
 git push origin :nombre-rama -> Borrar una rama remota
+git push origin --delete :nombre-rama -> Borrar una rama remota
 ```
 
 # Reestablecer al commit requerido
