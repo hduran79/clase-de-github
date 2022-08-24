@@ -29,7 +29,7 @@ feat: add title commit
 ## SIGNIFICADO DE LOS TIPOS
 
 -   **feat**: Cuando un commit agrega una nueva característica a nuestra APP o es una evolución.
--   **fix**: Cuando el commit representa una corrección.
+-   **fix**: Cuando el commit representa una corrección a una funcionalidad.
 -   **docs**: Cuando añadamos o actualizamos la documentación al proyecto.
 -   **style**: Cuando hay cambios de formato (guía de estilo). No se altera el código de producción.
 -   **refactor**: Cuando se modifica el código de producción, por ejemplo renombrar una variable, simplificar un método, etc…
