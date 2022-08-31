@@ -36,7 +36,7 @@ feat: add title commit
 -   **test**: Cuando se añaden o modifican los tests unitarios.
 -   **chore**: Para tareas rutinarias, por ejemplo se modifica el .gitignore etc… No se altera el código de producción.
 
-## BUENAS PRÁCTICAS PARA ESCRIBIR COMMITS.
+## BUENAS PRÁCTICAS PARA ESCRIBIR COMMITS..
 
 ### 1. Usar el verbos en el titulo (Agregar, Cambiar, Arreglar, Eliminar, …)
 Estamos tentados a escribir commit sin sentido pero cada commit es una instrucción para cambiar el estado del proyecto.
