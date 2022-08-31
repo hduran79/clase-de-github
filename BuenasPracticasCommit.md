@@ -38,7 +38,6 @@ feat: add title commit
 
 ## BUENAS PRÁCTICAS PARA ESCRIBIR COMMITS.
 
-
 ### 1. Usar el verbos en el titulo (Agregar, Cambiar, Arreglar, Eliminar, …)
 Estamos tentados a escribir commit sin sentido pero cada commit es una instrucción para cambiar el estado del proyecto.
 
