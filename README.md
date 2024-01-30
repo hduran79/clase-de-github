@@ -293,6 +293,13 @@ git push origin :nombre-rama -> Borrar una rama remota
 git push origin --delete :nombre-rama -> Borrar una rama remota
 ```
 
+# Renombrar rama local
+
+```
+git branch -m old_branch new_branch
+```
+
+
 # Reestablecer al commit requerido
 
 Es importante cuando queremos dejar una rama en su estado original
