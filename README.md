@@ -496,3 +496,6 @@ git info remote
 
 # hashes más cortos
 git log --oneline
+
+# Clone, fork y estrellas a repositorios
+Pendiente
