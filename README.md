@@ -357,19 +357,10 @@ git checkout -- index.html (quita el archivo de steagen area y lo pasa al workin
 git restore <archivo> (Elimina los cambios del archivo que esta en el working directory)
 ```
 
-# Tag
+# Borrar Tag
 
-1. Listar Tags
-git tag -l
-
-2. Borrar
-git tag --delete 1.0.0
-
-3. Borrar tag Remoto
-git push --delete origin 1.0.0
-
-4. Crear branch a partir de un Tag
-    git checkout -b nameBranch versionTag
+1. git tag --delete 1.0.0
+2. git push --delete origin 1.0.0
 
 # Manejo nombramiento de ramas
 
@@ -498,4 +489,7 @@ git info remote
 git log --oneline
 
 # Clone, fork y estrellas a repositorios
+Pendiente
+
+# remotos: push, pull y fetch
 Pendiente
