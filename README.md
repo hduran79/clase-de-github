@@ -493,3 +493,6 @@ git info remote
 ``` sh
  git remote show origin
 ```
+
+# hashes más cortos
+git log --oneline
