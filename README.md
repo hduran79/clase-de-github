@@ -120,6 +120,7 @@ Git reset se utiliza para mover el proyecto a un commit anterior eliminando todo
 
 * Se quiere regresar el proyecto al estado de un estado anterior pero se quiere mantener registros de esos cambios. En este caso debe utilizarse reverse.
 * Se está trabajando en proyecto entre más de una persona y no existen un consenso grupal sobre el revertido permanente.
+* Video https://www.youtube.com/watch?v=HZ1c25OIX4o
 
 ``` sh
 git reset HEAD~1 (Elimina todo el commit y coloca los archivos en la zona Working directory)
