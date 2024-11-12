@@ -493,7 +493,11 @@ git remote rm origin
 git info remote
 ``` sh
  git remote show origin
+<<<<<<< HEAD
 ```
 
 # hashes más cortos
 git log --oneline
+=======
+```
+>>>>>>> parent of 0542d5d (Hashes mas cortos)
