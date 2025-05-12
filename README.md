@@ -177,8 +177,8 @@ Almacenar los cambios en una zona virtual y funciona como una pila.
     1. Agregar los cambios en el Staging Area y después ejecutar los comandos del stash
     git stash -> Para guardar los cambios en la zona virtual.
     git stash list -> Listado de todos los elementos del stash
-    git stash pop <stash{0}> -> para recuperar el commit y lo borra del stash
-    git stash apply <stash{0}> -> para recuperar el commit pero no lo borra del stash
+    git stash pop @stash{number-pop} -> para recuperar el commit y lo borra del stash
+    git stash apply @stash{number-pop} -> para recuperar el commit pero no lo borra del stash
 
     Crear una rama a partir de un stash
     1. git stash
