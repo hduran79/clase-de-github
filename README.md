@@ -360,6 +360,7 @@ git restore <archivo> (Elimina los cambios del archivo que esta en el working di
 
 # Tag
 
+```sh
 1. Listar Tags
 git tag -l
 
@@ -371,6 +372,23 @@ git push --delete origin 1.0.0
 
 4. Crear branch a partir de un Tag
     git checkout -b nameBranch versionTag
+
+5. Crear una nueva rama master desde el tag
+
+    git checkout <nombre-del-tag>
+    git checkout -b master
+
+    Explicación:
+    git checkout <nombre-del-tag>: Te posiciona en el commit del tag.
+    git checkout -b master: Crea una nueva rama master desde ese commit.
+
+    Si ya existe una rama master, puedes renombrarla primero o usar otro nombre para la nueva rama para evitar conflictos:
+
+    git branch -m master master-old  # Renombra la rama master existente
+    git checkout <nombre-del-tag>
+    git checkout -b master
+    git push origin master
+```
 
 # Manejo nombramiento de ramas
 
