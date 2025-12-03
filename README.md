@@ -208,8 +208,8 @@ Almacenar los cambios en una zona virtual y funciona como una pila.
     1. Agregar los cambios en el Staging Area y después ejecutar los comandos del stash
     git stash -> Para guardar los cambios en la zona virtual.
     git stash list -> Listado de todos los elementos del stash
-    git stash pop <stash{0}> -> para recuperar el commit y lo borra del stash
-    git stash apply <stash{0}> -> para recuperar el commit pero no lo borra del stash
+    git stash pop @stash{number-pop} -> para recuperar el commit y lo borra del stash
+    git stash apply @stash{number-pop} -> para recuperar el commit pero no lo borra del stash
 
     Crear una rama a partir de un stash
     1. git stash
@@ -391,6 +391,7 @@ git restore <archivo> (Elimina los cambios del archivo que esta en el working di
 
 # Tag
 
+```sh
 1. Listar Tags
 git tag -l
 
@@ -402,6 +403,23 @@ git push --delete origin 1.0.0
 
 4. Crear branch a partir de un Tag
     git checkout -b nameBranch versionTag
+
+5. Crear una nueva rama master desde el tag
+
+    git checkout <nombre-del-tag>
+    git checkout -b master
+
+    Explicación:
+    git checkout <nombre-del-tag>: Te posiciona en el commit del tag.
+    git checkout -b master: Crea una nueva rama master desde ese commit.
+
+    Si ya existe una rama master, puedes renombrarla primero o usar otro nombre para la nueva rama para evitar conflictos:
+
+    git branch -m master master-old  # Renombra la rama master existente
+    git checkout <nombre-del-tag>
+    git checkout -b master
+    git push origin master
+```
 
 # Manejo nombramiento de ramas
 
