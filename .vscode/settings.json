@@ -1,0 +1,6 @@
+{
+    "conventionalCommits.scopes": [
+        "HU002",
+        "master"
+    ]
+}

@@ -170,6 +170,37 @@ git push -f origin master
         4. Hacer un git status para verificar que los commits estan el zona de staging area
         5. Hacer push para subir los cambios a develop
 
+# Cherry repo A a repo B
+
+``` sh
+# En el proyecto B
+cd /ruta/proyecto-B
+
+# Agregar el proyecto A como remoto temporal
+git remote add ${name_proyectoA} ${ruta_proyectoA}
+ejemplo: git remote add votre-api-keycloak$ ~/workspace-api-keycloak/votre-api-keycloak
+
+# Traer los commits del proyecto A
+git fetch ${name_proyectoA}
+ejemplo: git fetch votre-api-keycloak
+
+# Aplicar el commit específico
+git cherry-pick ${commit_hash} -> proyecto A
+ejemplo: git cherry-pick 193eba9068fca18b15a89bda259b4278e8c475dd
+
+# Opcional: remover el remoto temporal
+git remote remove ${name_proyectoA}
+ejemplo git remote remove/votre-api-keycloak
+
+# Manejo de conflictos durante el cherry-pick
+# Si hay conflictos, puedes abortar el cherry-pick con:
+git cherry-pick --abort
+
+# Resolución de conflictos manual (editar archivos)
+# Después de resolver los conflictos, continuar con el cherry-pick
+git cherry-pick --continue
+```
+
 # Stash
 
 Almacenar los cambios en una zona virtual y funciona como una pila.
